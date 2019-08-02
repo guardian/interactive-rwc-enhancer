@@ -1,0 +1,4 @@
+#!/bin/bash
+
+gulp deploylive --aus
+gulp deploylive --eng

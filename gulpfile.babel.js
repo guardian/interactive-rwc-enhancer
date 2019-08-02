@@ -1,4 +1,5 @@
-import config from './config.json'
+//import config from './config.json'
+
 
 import gulp from 'gulp'
 import file from 'gulp-file'
@@ -22,6 +23,15 @@ import replace from 'gulp-replace'
 
 import webpack from 'webpack'
 import ws from 'webpack-stream'
+
+const team = process.argv.find(a => a.includes("--")).toString().replace("--","")
+
+const config = {
+    "title": `Rugby World Cup team guide enhancer - ${team}`,
+    "docData": "",
+    "path": `2016/09/rwc-team-guide-${team}`
+}
+
 const debug = require('gulp-debug');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
