@@ -1,18 +1,43 @@
 <div class="i-wrapper">
     {{> header}}
     <div class="i-main">
-        <div>Pool {{pool}}</div>
-        <img src="{{crest}}"></img>
-        <img src="{{homekit}}"></img>
-        <img src="{{awaykit}}"></img>
+            <div class="i-header__standfirst" data-link-name="standfirst" data-component="standfirst">
+    <p>{{header.standfirst}}</p>
+    </div>
+</div>
+    <hr class="i-rule-fullwidth" />
 
-        <div>{{teamprofile}}</div>
-        <div>Star players</div>
+    <div class="i-main">
+        <div class="weighting--showcase">
+            <h3 class="i-team-heading i-absolute">{{teamname}}</h3>
+        </div>
+        <div class="i-team-graphics">
+            <img class="i-crest" src="{{crest}}"></img>
+            <div class="i-crest-divider"></div>
+            <img class="i-homekit i-kit" src="{{homekit}}"></img>
+            <img class="i-awaykit i-kit" src="{{awaykit}}"></img>
+        </div>
+        <div class="i-coach i-team-stat"><span>Coach</span><span>{{coach}}</span></div>
+        <div class="i-pool i-team-stat"><span>Pool</span><span>{{pool}}</span></div>
+        <div class="i-rank i-team-stat"><span>World rank</span><span>{{rank}}</span></div>
+        <div class="i-prev-best i-team-stat"><span>Previous best position</span><span>{{prevbest}}</span></div>
+
+        <div class="i-team-profile">{{{teamprofile}}}</div>
+    </div>
+    <hr class="i-rule-fullwidth" />
+    <div class="i-main">
+        <div class="weighting--showcase">
+            <h3 class="i-key-players-heading i-absolute">Key players</h3>
+        </div>
         {{#players}}
 
+        
+        <div class="i-playermugshot">
+            <div class="i-mugshot-inner">
+            <img src="{{playermugshot}}"></img>
+        </div>
+        </div>
         <div>{{playername}}</div>
-        <img class="gv-playermugshot" src="{{playermugshot}}"></img>
-
         <div>{{playerposition}}</div>
         <div>{{playerheight}}</div>
         <div>{{playerweight}}</div>
@@ -21,9 +46,12 @@
 
 
         {{/players}}
-
-        <h4>Full squad list</h4>
-
+    </div>
+    <hr class="i-rule-fullwidth" />
+    <div class="i-main">
+        <div class="weighting--showcase">
+            <h3 class="i-key-players-heading i-absolute">Lineup</h3>
+        </div>
 
         {{#list}}
 
@@ -31,9 +59,5 @@
         <div>{{position}}</div>
         {{/list}}
 
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
     </div>
 </div>

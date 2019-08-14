@@ -47,6 +47,7 @@
 .i-main {
     padding-left: 10px;
     padding-right: 10px;
+    position: relative;
     @include mq(desktop) {
         width: 620px;
         padding-left: 20px;

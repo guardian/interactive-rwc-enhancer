@@ -21,7 +21,8 @@
 }
 
 .i-header__headline h1 {
-    @include fs-header(5);
+    //@include fs-header(5);
+    @include fs-titlepiece(2);
     font-size: 44px;
     line-height: 48px;  
 }
