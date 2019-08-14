@@ -186,7 +186,7 @@ position: absolute;
     column-gap: 40px;
     column-count: 2;
     font-size: 16px;
-    line-height: 28px;
+    line-height: 18px;
     padding-bottom: 60px;
 
     .i-lineup-position {
@@ -197,7 +197,9 @@ position: absolute;
 
     .i-lineup-player {
         display: inline-block;
+        padding-bottom: 10px;
     }
+
 }
 
 
