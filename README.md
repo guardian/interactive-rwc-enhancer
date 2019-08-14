@@ -149,3 +149,18 @@ You'll also need to comment in the _scrolly.scss code in main.scss, as well as s
     </div>
 </div>
 ```
+
+### Rugby wc team guide enhancer
+
+
+https://github.com/guardian/interactive-rwc-enhancer
+
+The name is a bit misleading. Basically you add the teams to doAll, then add the archieml url to render.js, then do
+
+$ bash doAll
+
+and it will spit them all out. in the meantime you can do 
+
+$ gulp --eng
+
+ to look at any individual one of them

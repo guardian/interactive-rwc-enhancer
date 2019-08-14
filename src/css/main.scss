@@ -7,12 +7,24 @@
 // Uncomment for full screen (including immersive article main media)
 //@import "fullscreen";
 
+body {
+    margin: 0 !important;
+}
+
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
+   
 }
 
 .element--thumbnail {
     border-radius: 100%;
     border: 20px solid red;
+}
+
+.interactive-wrapper {
+
+    h2 {
+       @include fs-titlepiece(1);
+    }
 }
