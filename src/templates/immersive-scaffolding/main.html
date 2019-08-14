@@ -1,0 +1,39 @@
+<div class="i-wrapper">
+    {{> header}}
+    <div class="i-main">
+        <div>Pool {{pool}}</div>
+        <img src="{{crest}}"></img>
+        <img src="{{homekit}}"></img>
+        <img src="{{awaykit}}"></img>
+
+        <div>{{teamprofile}}</div>
+        <div>Star players</div>
+        {{#players}}
+
+        <div>{{playername}}</div>
+        <img class="gv-playermugshot" src="{{playermugshot}}"></img>
+
+        <div>{{playerposition}}</div>
+        <div>{{playerheight}}</div>
+        <div>{{playerweight}}</div>
+        <div>{{playercaps}}</div>
+        <div>{{playerprofile}}</div>
+
+
+        {{/players}}
+
+        <h4>Full squad list</h4>
+
+
+        {{#list}}
+
+        <div>{{player}}</div>
+        <div>{{position}}</div>
+        {{/list}}
+
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
