@@ -2,6 +2,7 @@
 @import "fonts";
 @import "palette";
 @import "immersive";
+@import "team-colours";
 
 // Uncomment for embeds
 //@import "embed";
@@ -31,11 +32,17 @@
         @include fs-titlepiece(1);
         font-size: 30px;
         line-height: 32px;
+        padding-bottom: 20px;
+        @include mq(leftCol) {
+        word-spacing: 1000px;
+        }
      }
 
 
 .i-absolute {
+    @include mq(leftCol) {
 position: absolute;
+    }
 }
 
 .i-rule-fullwidth {
@@ -90,10 +97,22 @@ position: absolute;
 
 }
 
+.i-player-wrapper {
+    margin-bottom: 20px;
+    &:after {
+        content: "";
+        display: block;
+        clear: both;
+        width: 100%;
+    }
+}
+
 .i-playermugshot {
     width: 140px;
     height: 140px;
     position: relative;
+    float: left;
+    
 
     .i-mugshot-inner{
         width: 100%;
@@ -105,5 +124,81 @@ position: absolute;
             width: 100%;
         }
     }
+
+    .i-star-icon {
+        position: absolute;
+        width: 46px;
+        height: 46px;
+        border: 1px solid #121212;
+        background: white;
+        bottom: 0;
+        left: 0;
+        border-radius: 50%;
+    }
 }
+
+.i-playerinfo {
+ float: right;
+ width: calc(100% - 150px);
+}
+
+.i-player-stat {
+
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 10px;
+
+    span {
+
+        @include fs-textSans(2);
+        font-weight: 800;
+        display: block;
+
+        &:nth-of-type(2) {
+            @include fs-titlepiece(1);
+            font-size: 24px;
+            line-height: 28px;
+        }
+    }
+
+    &.i-player-name {
+       display: block;
+       margin-right: 0;
+       span {
+       font-size: 35px;
+       line-height: 40px;
+       }
+    }
+
+}
+
+.i-player-profile {
+    margin-left: -150px;
+    @include mq(tablet) {
+        margin-left: 0;
+    }
+}
+
+.i-lineup {
+
+    @include fs-textSans(4);
+    font-weight: 800;
+    column-gap: 40px;
+    column-count: 2;
+    font-size: 16px;
+    line-height: 28px;
+    padding-bottom: 60px;
+
+    .i-lineup-position {
+        display: inline-block;
+        width: 120px;
+        margin-right: 10px;
+    }
+
+    .i-lineup-player {
+        display: inline-block;
+    }
+}
+
+
 

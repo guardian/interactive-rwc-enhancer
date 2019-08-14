@@ -1,0 +1,21 @@
+// AUSTRALIA
+
+.australia {
+
+    .i-team-text-color {
+        color: green;
+    }
+
+    .i-team-fill-color  {
+        fill: green;
+    }
+    .od-share__button {
+        
+    
+        &:hover {
+            background-color: green;
+        }
+
+    }
+
+}

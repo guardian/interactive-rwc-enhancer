@@ -64,7 +64,7 @@
     line-height: 1.35;
     margin-bottom: 4px;
     a {
-        color: $news-red;
+        //@debugcolor: $news-red;
         @include fs-header(1);
         font-size: 17px;
     }
@@ -141,7 +141,7 @@
     border: 1px solid #dcdcdc; 
 
     &:hover {
-        background-color: $news-red;
+        //background-color: $news-red;
 
         .od-share__icon {
             fill: $neutral-100;

@@ -1,15 +1,15 @@
-<div class="i-wrapper">
+<div class="i-wrapper {{teamClass}}">
     {{> header}}
     <div class="i-main">
-            <div class="i-header__standfirst" data-link-name="standfirst" data-component="standfirst">
-    <p>{{header.standfirst}}</p>
+        <div class="i-header__standfirst" data-link-name="standfirst" data-component="standfirst">
+            <p>{{header.standfirst}}</p>
+        </div>
     </div>
-</div>
     <hr class="i-rule-fullwidth" />
 
     <div class="i-main">
         <div class="weighting--showcase">
-            <h3 class="i-team-heading i-absolute">{{teamname}}</h3>
+            <h3 class="i-team-heading i-absolute i-team-text-color">{{teamname}}</h3>
         </div>
         <div class="i-team-graphics">
             <img class="i-crest" src="{{crest}}"></img>
@@ -17,32 +17,41 @@
             <img class="i-homekit i-kit" src="{{homekit}}"></img>
             <img class="i-awaykit i-kit" src="{{awaykit}}"></img>
         </div>
-        <div class="i-coach i-team-stat"><span>Coach</span><span>{{coach}}</span></div>
-        <div class="i-pool i-team-stat"><span>Pool</span><span>{{pool}}</span></div>
-        <div class="i-rank i-team-stat"><span>World rank</span><span>{{rank}}</span></div>
-        <div class="i-prev-best i-team-stat"><span>Previous best position</span><span>{{prevbest}}</span></div>
+        <div class="i-coach i-team-stat i-team-text-color"><span>Coach</span><span>{{coach}}</span></div>
+        <div class="i-pool i-team-stat i-team-text-color"><span>Pool</span><span>{{pool}}</span></div>
+        <div class="i-rank i-team-stat i-team-text-color"><span>World rank</span><span>{{rank}}</span></div>
+        <div class="i-prev-best i-team-stat i-team-text-color"><span>Previous best
+                position</span><span>{{prevbest}}</span></div>
 
         <div class="i-team-profile">{{{teamprofile}}}</div>
     </div>
     <hr class="i-rule-fullwidth" />
     <div class="i-main">
         <div class="weighting--showcase">
-            <h3 class="i-key-players-heading i-absolute">Key players</h3>
+            <h3 class="i-key-players-heading i-absolute i-team-text-color">Key players</h3>
         </div>
         {{#players}}
 
-        
+        <div class="i-player-wrapper">
         <div class="i-playermugshot">
             <div class="i-mugshot-inner">
-            <img src="{{playermugshot}}"></img>
+                <img src="{{playermugshot}}"></img>
+            </div>
+            <div class="i-star-icon"></div>
+        </div>
+        <div class="i-playerinfo">
+            <div class="i-player-name i-player-stat i-team-text-color"><span></span><span>{{playername}}</span></div>
+            <div class="i-player-position i-player-stat i-team-text-color">
+                <span>Position</span><span>{{playerposition}}</span></div>
+            <div class="i-player-height i-player-stat i-team-text-color">
+                <span>Height</span><span>{{playerheight}}</span></div>
+            <div class="i-player-weight i-player-stat i-team-text-color">
+                <span>Weight</span><span>{{playerweight}}</span></div>
+            <div class="i-player-caps i-player-stat i-team-text-color"><span>Caps</span><span>{{playercaps}}</span>
+            </div>
+            <div class="i-player-profile">{{playerprofile}}</div>
         </div>
         </div>
-        <div>{{playername}}</div>
-        <div>{{playerposition}}</div>
-        <div>{{playerheight}}</div>
-        <div>{{playerweight}}</div>
-        <div>{{playercaps}}</div>
-        <div>{{playerprofile}}</div>
 
 
         {{/players}}
@@ -50,14 +59,15 @@
     <hr class="i-rule-fullwidth" />
     <div class="i-main">
         <div class="weighting--showcase">
-            <h3 class="i-key-players-heading i-absolute">Lineup</h3>
+            <h3 class="i-key-players-heading i-absolute i-team-text-color">Lineup</h3>
         </div>
-
+<div class="i-lineup">
         {{#list}}
-
-        <div>{{player}}</div>
-        <div>{{position}}</div>
+        <div class="i-lineup-position i-team-text-color">{{position}}</div>
+        <div class="i-lineup-player">{{player}}</div>
+        <br/>
         {{/list}}
+    </div>
 
     </div>
 </div>
