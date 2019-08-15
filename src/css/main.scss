@@ -52,24 +52,59 @@ position: absolute;
 
 
 .i-team-graphics {
+    position: relative;
+    width: 100%;
+    font-size: 0;
+
+    &:before, &:after {
+        content: "";
+        display: block;
+        position: absolute;
+        border-top: 1px solid $neutral-86;
+        width: 100%;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+    }
+
+    @include mq(mobileLandscape) {
+        &:before, &:after {
+            display: none;
+        }
     position: absolute;
     right: 0;
     top: 0;
+    width: auto;
+    }
     //width: 270px;
 
     .i-crest, .i-kit {
+        display: inline-block;
+       height: 80px;
+       width: auto;
+        padding: 10px;
+        @include mq(mobileLandscape) {
+            
+        display: block;
         float: left;
-        width: 80px;
         height: 80px;
-        margin: 0 10px 0 10px;
+        padding: 0 10px 0 10px;
         position: relative;
+    }
     }
 
     .i-crest-divider {
-        float: left;
-        height: 80px;
+        display: inline-block;
+        height: 100px;
         width: 1px;
+        position: relative;
+        top: 0;
         background-color: $neutral-86;
+        @include mq(mobileLandscape) {
+            height: 90px;
+            top: -9px;
+            float: left;
+            display: block;
+        }
     }
 }
 
@@ -91,8 +126,17 @@ position: absolute;
     }
 
     &.i-coach {
+        
        display: block;
        margin-right: 0;
+       @include mq(leftCol) {
+       word-spacing: 1000px;
+       }
+
+       span:nth-of-type(2) {
+        font-size: 32px;
+        line-height: 33px;
+        }
     }
 
 }
@@ -169,6 +213,12 @@ position: absolute;
        line-height: 40px;
        }
     }
+
+    &.i-player-position {
+        // display: block;
+        // margin-right: 0;
+        
+     }
 
 }
 

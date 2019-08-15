@@ -14,8 +14,9 @@
         <div class="i-team-graphics">
             <img class="i-crest" src="{{crest}}"></img>
             <div class="i-crest-divider"></div>
-            <img class="i-homekit i-kit" src="{{homekit}}"></img>
-            <img class="i-awaykit i-kit" src="{{awaykit}}"></img>
+            <!-- <img class="i-homekit i-kit" src="{{homekit}}"></img>
+            <img class="i-awaykit i-kit" src="{{awaykit}}"></img> -->
+            <img class="i-kit" src="<%= path %>/assets/imgs/kits/2x/{{kit}}"></img>
         </div>
         <div class="i-coach i-team-stat i-team-text-color"><span>Coach</span><span>{{coach}}</span></div>
         <div class="i-pool i-team-stat i-team-text-color"><span>Pool</span><span>{{pool}}</span></div>
@@ -33,26 +34,26 @@
         {{#players}}
 
         <div class="i-player-wrapper">
-        <div class="i-playermugshot">
-            <div class="i-mugshot-inner">
-                <img src="{{playermugshot}}"></img>
+            <div class="i-playermugshot">
+                <div class="i-mugshot-inner">
+                    <img src="{{playermugshot}}"></img>
+                </div>
+                <div class="i-star-icon"></div>
             </div>
-            <div class="i-star-icon"></div>
-        </div>
-        <div class="i-playerinfo">
-            <div class="i-player-name i-player-stat i-team-text-color"><span></span><span>{{playername}}</span></div>
-            <div class="i-player-position i-player-stat i-team-text-color">
-                <span>Position</span><span>{{playerposition}}</span></div>
-            <div class="i-player-height i-player-stat i-team-text-color">
-                <span>Height</span><span>{{playerheight}}</span></div>
-            <div class="i-player-weight i-player-stat i-team-text-color">
-                <span>Weight</span><span>{{playerweight}}</span></div>
-            <div class="i-player-caps i-player-stat i-team-text-color"><span>Caps</span><span>{{playercaps}}</span>
+            <div class="i-playerinfo">
+                <div class="i-player-name i-player-stat i-team-text-color"><span></span><span>{{playername}}</span>
+                </div>
+                <div class="i-player-position i-player-stat i-team-text-color">
+                    <span>Position</span><span>{{playerposition}}</span></div>
+                <div class="i-player-height i-player-stat i-team-text-color">
+                    <span>Height</span><span>{{playerheight}}</span></div>
+                <div class="i-player-weight i-player-stat i-team-text-color">
+                    <span>Weight</span><span>{{playerweight}}</span></div>
+                <div class="i-player-caps i-player-stat i-team-text-color"><span>Caps</span><span>{{playercaps}}</span>
+                </div>
+                <div class="i-player-profile">{{playerprofile}}</div>
             </div>
-            <div class="i-player-profile">{{playerprofile}}</div>
         </div>
-        </div>
-
 
         {{/players}}
     </div>
@@ -61,13 +62,13 @@
         <div class="weighting--showcase">
             <h3 class="i-key-players-heading i-absolute i-team-text-color">Lineup</h3>
         </div>
-<div class="i-lineup">
-        {{#list}}
-        <div class="i-lineup-position i-team-text-color">{{position}}</div>
-        <div class="i-lineup-player">{{player}}</div>
-        <br/>
-        {{/list}}
-    </div>
+        <div class="i-lineup">
+            {{#list}}
+            <div class="i-lineup-position i-team-text-color">{{position}}</div>
+            <div class="i-lineup-player">{{player}}</div>
+            <br />
+            {{/list}}
+        </div>
 
     </div>
 </div>
