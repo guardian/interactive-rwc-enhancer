@@ -1,21 +1,72 @@
-// AUSTRALIA
+$teamcolors: ( 
+    
+"argentina": $news-red,
 
-.australia {
+"australia": #36aa46,
+
+"canada": $news-red,
+
+"england": #A5BFE1,
+
+"fiji": #D33832,
+
+"france": #023260,
+
+"georgia": #FFCC44,
+
+"ireland": #A5BFE1,
+
+"iceland": #2C6AFF,
+
+"italy": #D33832,
+
+"japan": #36aa46,
+
+"namibia": $highlight-yellow,
+
+"new-zealand": #D33832,
+
+"russia": #D33832,
+
+"samoa": $news-red,
+
+"scotland": #f6f6f6,
+
+"south-africa": #038176,
+
+"tonga": $highlight-yellow,
+
+"uruguay": #D33832,
+
+"usa": $news-red,
+
+"wales": #D33832);
+
+
+
+
+
+@each $name, $value in $teamcolors {
+
+.#{$name} {
 
     .i-team-text-color {
-        color: green;
+        color: #{$value} !important;
+        ;
     }
 
     .i-team-fill-color  {
-        fill: green;
+        fill: #{$value} !important;
     }
     .od-share__button {
         
     
         &:hover {
-            background-color: green;
+            background-color: #{$value} !important;
         }
 
     }
+
+}
 
 }
