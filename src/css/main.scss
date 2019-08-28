@@ -16,7 +16,8 @@
 .element-atom,
 .interactive-atom {
     margin: 0 !important;
-   
+    overflow-x: hidden;
+
 }
 
 .element--thumbnail {
@@ -83,7 +84,7 @@ position: absolute;
        width: auto;
         padding: 10px;
         @include mq(mobileLandscape) {
-            
+
         display: block;
         float: left;
         height: 80px;
@@ -126,7 +127,7 @@ position: absolute;
     }
 
     &.i-coach {
-        
+
        display: block;
        margin-right: 0;
        @include mq(leftCol) {
@@ -156,7 +157,7 @@ position: absolute;
     height: 140px;
     position: relative;
     float: left;
-    
+
 
     .i-mugshot-inner{
         width: 100%;
@@ -217,7 +218,7 @@ position: absolute;
     &.i-player-position {
         // display: block;
         // margin-right: 0;
-        
+
      }
 
 }
@@ -251,6 +252,3 @@ position: absolute;
     }
 
 }
-
-
-
