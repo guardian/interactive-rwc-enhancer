@@ -2,3 +2,5 @@
 
 gulp deploylive --aus
 gulp deploylive --eng
+gulp deploylive --jpn
+gulp deploylive --ire
