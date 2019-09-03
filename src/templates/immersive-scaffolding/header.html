@@ -4,14 +4,14 @@
       <a href="{{header.tagUrl}}">{{header.tagTitle}}</a>
   </div>
     <h1 class="seo-headline">{{header.seoHeadline}}</h1>
-    <div class="gv-header-image gv-header-image-desktop__one"></div>
+    <img class="gv-header-image gv-header-image__one" src="<%= path %>/assets/imgs/header/{{header.shodoImage}}"></img>
     <div class="gv-headline__container">
       <div class="gv-headline">{{header.headline}}</div>
-      <div class="gv-header-image gv-header-image-desktop__two"></div>
+      <img class="gv-header-image gv-header-image__two" src="<%= path %>/assets/imgs/header/{{header.typeSVG}}"></img>
     </div>
 
 </div>
-    <div class="i-header__standfirst" data-link-name="standfirst" data-component="standfirst">
+    <div class="i-header__standfirst i-header__standfirst__mobile" data-link-name="standfirst" data-component="standfirst">
         <meta itemprop="description" content="{{header.standfirst}}">
         <p>{{header.standfirst}}</p>
     </div>
