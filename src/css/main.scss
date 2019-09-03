@@ -236,8 +236,13 @@ position: absolute;
     font-weight: 300 !important;
     font-size: 14px !important;
     line-height: 16px !important;
-    padding-bottom: 20px !important;
+    padding-bottom: 0 !important;
     color: #121212 !important;
+
+    .i-lineup-entry {
+       
+        //margin-bottom: 0 !important;
+    }
    
 
 }
@@ -247,9 +252,9 @@ position: absolute;
     @include fs-textSans(4);
     font-weight: 800;
    
-    font-size: 16px;
-    line-height: 18px;
-    padding-bottom: 60px;
+    font-size: 15px;
+    line-height: 17px;
+    padding-bottom: 20px;
 
     @include mq(tablet) {
         column-gap: 40px;
@@ -257,39 +262,62 @@ position: absolute;
     }
 
     .i-lineup-entry {
-        display: table;
+        display: block;
+        //table-layout: fixed;
+        margin-bottom: 15px;
     }
 
     .i-lineup-entry-hide-mobile {
         display: none;
         @include mq(tablet) {
-            display: table;
+            display: block;
         }
 
     }
 
     .i-lineup-cell {
-        display: table-cell;
+        display: inline-block;
+        padding-right: 5px;
+        text-align: left;
     }
 
     .i-lineup-age, .i-lineup-caps {
         //display: inline-block;
         //width: 120px;
         //margin-right: 10px;
-        width: 40px;
+        padding-right: 10px;
+        width: 20px;
+    }
+
+    .i-lineup-caps {
+        padding-right: 0;
     }
 
     .i-lineup-position {
         //display: inline-block;
         //width: 120px;
         //margin-right: 10px;
-        width: 120px;
+        width: 90px;
     }
 
     .i-lineup-player {
         //display: inline-block;
         //padding-bottom: 10px;
         width: 120px;
+        @include mq(mobileLandscape) {
+            width: 180px;
+        }
+        @include mq(tablet) {
+            width: 120px;
+        }
     }
 
+}
+
+.i-footnote {
+    @include fs-textSans(4);
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 40px;
 }
