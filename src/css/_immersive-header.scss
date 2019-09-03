@@ -418,3 +418,17 @@
     display: block;
     border-top: 1px solid #dcdcdc;
 }
+
+
+
+// TEAM HEADER BACKGROUNDS
+
+
+.australia {
+  .gv-header-image-desktop__one {
+    background-image: url('<%= path %>/assets/imgs/header/australia-stroke.png');
+  }
+  .gv-header-image-desktop__two {
+    background-image: url('<%= path %>/assets/imgs/header/australia-type.svg');
+  }
+}

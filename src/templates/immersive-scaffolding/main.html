@@ -60,10 +60,31 @@
         <div class="weighting--showcase">
             <h3 class="i-key-players-heading i-absolute i-team-text-color">Lineup</h3>
         </div>
+
+        <div class="i-lineup-header">
+          
+            <div class="i-lineup-entry">
+            <div class="i-lineup-cell i-lineup-player i-team-text-color">Player</div>
+            <div class="i-lineup-cell i-lineup-position i-team-text-color">Position</div>
+            <div class="i-lineup-cell i-lineup-age i-team-text-color">Age</div>
+            <div class="i-lineup-cell i-lineup-caps i-team-text-color">Caps</div>
+        </div>
+        <div class="i-lineup-entry i-lineup-entry-hide-mobile">
+            <div class="i-lineup-cell i-lineup-player i-team-text-color">Player</div>
+            <div class="i-lineup-cell i-lineup-position i-team-text-color">Position</div>
+            <div class="i-lineup-cell i-lineup-age i-team-text-color">Age</div>
+            <div class="i-lineup-cell i-lineup-caps i-team-text-color">Caps</div>
+        </div>
+         
+        </div>
         <div class="i-lineup">
             {{#list}}
-            <div class="i-lineup-position i-team-text-color">{{position}}</div>
-            <div class="i-lineup-player">{{player}}</div>
+            <div class="i-lineup-entry">
+            <div class="i-lineup-cell i-lineup-player">{{player}}</div>
+            <div class="i-lineup-cell i-lineup-position i-team-text-color">{{position}}</div>
+            <div class="i-lineup-cell i-lineup-age i-team-text-color">28</div>
+            <div class="i-lineup-cell i-lineup-caps i-team-text-color">14</div>
+        </div>
             <br />
             {{/list}}
         </div>
