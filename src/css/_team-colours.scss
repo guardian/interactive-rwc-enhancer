@@ -1,5 +1,5 @@
-$teamcolors: ( 
-    
+$teamcolors: (
+
 "argentina": $news-red,
 
 "australia": #36aa46,
@@ -20,7 +20,7 @@ $teamcolors: (
 
 "italy": #D33832,
 
-"japan": #36aa46,
+"japan": $news-red,
 
 "namibia": $highlight-yellow,
 
@@ -59,8 +59,8 @@ $teamcolors: (
         fill: #{$value} !important;
     }
     .od-share__button {
-        
-    
+
+
         &:hover {
             background-color: #{$value} !important;
         }
