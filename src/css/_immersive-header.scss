@@ -6,13 +6,13 @@
 
 .gv-header-wrapper {
     width: 100%;
-    min-height: 580px;
+    min-height: 550px;
     background-color: white;
     position: relative;
     z-index: 0;
 
     @include mq(mobileMedium) {
-      min-height: 667px;
+      min-height: 600px;
     }
 
     @include mq(tablet) {
@@ -39,39 +39,59 @@
       }
     }
 
-    .gv-header-image {
-      background-repeat: no-repeat;
-      background-size: contain;
-      position: absolute;
-    }
+    .gv-header-image__one {
+        display: block;
+        position: absolute;
+        height: auto;
+        width: 100%;
+        // left: 10px;
+        bottom: 150px;
+        @include mq(mobileLandscape) {
+            width: 480px;
+        }
+          @include mq(tablet) {
+            bottom: 200px;
+          }
+          @include mq(desktop) {
+            bottom: 0px;
+            left: 450px;
+          }
+          @include mq(leftCol) {
+            width: 500px;
+          }
+          @include mq(wide) {
+            left: 360px;
+            width: 700px;
+          }
+      }
 
-    .gv-header-image-desktop__one {
-      background-image: url('<%= path %>/assets/imgs/header/australia-stroke.png');
-      width: calc(100% - 20px);
-      height: 100%;
-      left: 10px;
-      top: 50px;
-      z-index: -1;
-      @include mq(mobileLandscape) {
-        max-height: 400px;
-      }
-      @include mq(tablet) {
-      }
-      @include mq(desktop) {
-        max-height: 450px;
-        left: 500px;
-        top: 160px;
-      }
-      @include mq(leftCol) {
-        top: 80px;
-        max-height: 470px;
-        left: 500px;
-      }
-      @include mq(wide) {
-        top: 20px;
-        max-height: 562px;
-      }
-    }
+    // .gv-header-image__one {
+    //   background-image: url('<%= path %>/assets/imgs/header/australia-shodo.png');
+    //   width: calc(100% - 20px);
+    //   height: 100%;
+    //   left: 10px;
+    //   top: 50px;
+    //   z-index: -1;
+    //   @include mq(mobileLandscape) {
+    //     max-height: 400px;
+    //   }
+    //   @include mq(tablet) {
+    //   }
+    //   @include mq(desktop) {
+    //     max-height: 450px;
+    //     left: 500px;
+    //     top: 160px;
+    //   }
+    //   @include mq(leftCol) {
+    //     top: 80px;
+    //     max-height: 470px;
+    //     left: 500px;
+    //   }
+    //   @include mq(wide) {
+    //     top: 20px;
+    //     max-height: 562px;
+    //   }
+    // }
 
     .gv-headline__container {
       position: absolute;
@@ -86,7 +106,7 @@
       }
       @include mq(tablet) {
         width: 540px;
-        bottom: 0px;
+        bottom: 20px;
       }
       @include mq(desktop) {
         top: 80px;
@@ -105,6 +125,7 @@
     .gv-headline {
       @include fs-titlepiece(3);
       position: relative;
+      display: block;
       font-size: 47px;
       line-height: 47px;
       z-index: 2;
@@ -124,26 +145,45 @@
       }
     }
 
-    .gv-header-image-desktop__two {
-      background-image: url('<%= path %>/assets/imgs/header/australia-type.svg');
-      width: 240px;
-      height: 20px;
-      position: relative;
-      align-self: flex-end;
-      z-index: 1;
+    .gv-header-image__two {
+        display: block;
+        position: relative;
+        align-self: flex-end;
+        height: auto;
+        width: 240px;
+        @include mq(mobileMedium) {
+            width: 300px;
+        }
+          @include mq(tablet) {
+            // height: 40px;
+          }
+          @include mq(desktop) {
+          }
+          @include mq(leftCol) {
+            width: 400px;
+          }
+      }
 
-      @include mq(mobileMedium) {
-        width: 300px;
-      }
-      @include mq(tablet) {
-        height: 40px;
-      }
-      @include mq(desktop) {
-      }
-      @include mq(leftCol) {
-        width: 400px;
-      }
-    }
+    // .gv-header-image__two {
+    //   background-image: url('<%= path %>/assets/imgs/header/australia-type.svg');
+    //   width: 240px;
+    //   height: 20px;
+    //   position: relative;
+    //   align-self: flex-end;
+    //   z-index: 1;
+    //
+    //   @include mq(mobileMedium) {
+    //     width: 300px;
+    //   }
+    //   @include mq(tablet) {
+    //     height: 40px;
+    //   }
+    //   @include mq(desktop) {
+    //   }
+    //   @include mq(leftCol) {
+    //     width: 400px;
+    //   }
+    // }
 
   }
 
@@ -188,6 +228,22 @@
     }
   }
 
+  .i-header__standfirst__mobile {
+    display: block;
+
+    @include mq(tablet) {
+      display: none;
+    }
+  }
+
+  .i-header__standfirst__desktop {
+    display: none;
+
+    @include mq(tablet) {
+      display: block;
+    }
+  }
+
   a {
       color: $sport-blue;
     }
@@ -228,8 +284,14 @@
     font-weight: 300;
     color: #767676;
     margin-top: 24px;
-    margin-bottom: 6px;
+    margin-bottom: 36px;
     max-width: 540px;
+
+    @include mq(tablet) {
+      margin-top: 12px;
+      // margin-bottom:
+    }
+
 }
 
 .i-header__meta {
@@ -244,6 +306,8 @@
         width: 130px;
         position: absolute;
         left: -140px;
+        margin-top: 10px;
+        // bottom: -125px;
     }
 
     @include mq(wide) {
