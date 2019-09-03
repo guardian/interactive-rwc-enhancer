@@ -29,7 +29,7 @@ const team = process.argv.find(a => a.includes("--")).toString().replace("--",""
 const config = {
     "title": `Rugby World Cup team guide enhancer - ${team}`,
     "docData": "",
-    "path": `2016/09/rwc-team-guide-${team}`
+    "path": `2019/09/rwc-team-guide-${team}`
 }
 
 const debug = require('gulp-debug');
