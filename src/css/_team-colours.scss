@@ -67,6 +67,10 @@ $teamcolors: (
 
     }
 
+    .i-star-icon svg path {
+        fill: #{$value} !important;
+    }
+
 }
 
 }

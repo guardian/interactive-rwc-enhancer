@@ -142,6 +142,34 @@ position: absolute;
 
 }
 
+.i-key-players-heading {
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 165px;
+        height: 23px;
+        background-image: url('<%= path %>/assets/imgs/type/key-player.svg');
+        left: 0;
+        bottom: -10px;
+    }
+
+}
+
+.i-lineup-heading {
+
+    &:after {
+        content: "";
+        position: absolute;
+        width: 165px;
+        height: 23px;
+        background-image: url('<%= path %>/assets/imgs/type/lineup.svg');
+        left: 0;
+        bottom: -10px;
+    }
+
+}
+
 .i-player-wrapper {
     margin-bottom: 20px;
     &:after {
@@ -179,6 +207,11 @@ position: absolute;
         bottom: 0;
         left: 0;
         border-radius: 50%;
+        svg {
+            position: absolute;
+            left:8px;
+            top: 8px;
+        }
     }
 }
 
