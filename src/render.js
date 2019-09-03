@@ -23,7 +23,15 @@ const dataurls = [
 {
     team : "eng",
     data: "https://interactive.guim.co.uk/docsdata-test/1kyqSBA0SaP6T2JC8WrpoCdNumKXUPvw2LxnF10OqgfE.json"
-}
+},
+{
+    team : "jpn",
+    data: "https://interactive.guim.co.uk/docsdata-test/1HnX-EbWBcPlktmvFY7aWx2-c8SdlI9Z3_6ARq6XRRpo.json"
+},
+{
+    team : "ire",
+    data: "https://interactive.guim.co.uk/docsdata-test/1DlJtJH0dsin33XXndsoWnGk82mVnogqDB_7PBwqH-BQ.json"
+},
 ]
 
 // export async function render() {
@@ -45,9 +53,9 @@ const dataurls = [
 export async function render() {
     var teamurl = dataurls.find(d => d.team == team).data;
     const data = await clean(await rp({uri: teamurl, json: true}));
-    
+
     return Mustache.render(immersiveHTML, data, {"header": immersiveHeaderHTML});
-} 
+}
 
 
 function getTeamClass( str ) {
