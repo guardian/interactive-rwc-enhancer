@@ -1,6 +1,21 @@
 #!/bin/bash
 
 gulp deploylive --aus
+gulp deploylive --arg
+gulp deploylive --can
 gulp deploylive --eng
-gulp deploylive --jpn
+gulp deploylive --fij
+gulp deploylive --fra
+gulp deploylive --geo
 gulp deploylive --ire
+gulp deploylive --jap
+gulp deploylive --nam
+gulp deploylive --nz
+gulp deploylive --rsa
+gulp deploylive --rus
+gulp deploylive --sam
+gulp deploylive --sco
+gulp deploylive --ton
+gulp deploylive --uru
+gulp deploylive --usa
+gulp deploylive --wal
