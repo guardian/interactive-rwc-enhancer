@@ -7,6 +7,7 @@ import rp from "request-promise"
 
 const clean = async(immersiveData) => {
     immersiveData.teamClass = getTeamClass(immersiveData.teamname);
+    immersiveData.teamprofile = stringToPars( immersiveData.teamprofile );
     immersiveData.twitterLink = 'https://twitter.com/intent/tweet?text=' + encodeURI(immersiveData.header.shareText) + '&url=' + encodeURIComponent(immersiveData.header.url + '?CMP=share_btn_tw');
     immersiveData.facebookLink = 'https://www.facebook.com/dialog/share?app_id=180444840287&href=' + encodeURIComponent(immersiveData.header.url + '?CMP=share_btn_fb');
     immersiveData.emailLink = 'mailto:?subject=' + encodeURIComponent(immersiveData.header.shareText) + '&body=' + encodeURIComponent(immersiveData.header.url + '?CMP=share_btn_link');
@@ -61,4 +62,14 @@ export async function render() {
 function getTeamClass( str ) {
     str = str.replace(/\s+/g, '-').toLowerCase();
     return str;
+}
+
+function stringToPars( str ) {
+
+const pars = str.split('\n')
+
+const pTags = pars.map( str => `<p>${str}</p>` );
+
+return pTags;
+
 }
