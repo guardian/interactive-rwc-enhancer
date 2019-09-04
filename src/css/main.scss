@@ -165,7 +165,7 @@ position: absolute;
 
 .i-key-players-heading {
 
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 
     &:after {
         content: "";
@@ -174,7 +174,7 @@ position: absolute;
         height: 23px;
         background-image: url('<%= path %>/assets/imgs/type/key-player.svg');
         left: 0;
-        bottom: -10px;
+        bottom: -30px;
         background-size: 100% auto;
         background-repeat: no-repeat;
 
@@ -189,7 +189,7 @@ position: absolute;
 }
 
 .i-lineup-heading {
-    margin-bottom: 40px;
+    margin-bottom: 60px;
     &:after {
         content: "";
         position: absolute;
@@ -197,7 +197,7 @@ position: absolute;
         height: 23px;
         background-image: url('<%= path %>/assets/imgs/type/lineup.svg');
         left: 0;
-        bottom: -10px;
+        bottom: -30px;
 
         background-size: 100% auto;
         background-repeat: no-repeat;
