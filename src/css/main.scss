@@ -129,7 +129,7 @@ position: absolute;
     display: inline-block;
     margin-right: 20px;
     margin-bottom: 10px;
-   
+
 
     span {
 
@@ -275,18 +275,26 @@ position: absolute;
         display: block;
 
         &:nth-of-type(2) {
-            @include fs-titlepiece(1);
+            @include fs-headline(1);
+            font-weight: 700;
             font-size: 24px;
             line-height: 28px;
         }
     }
 
     &.i-player-name {
+
        display: block;
        margin-right: 0;
        span {
-       font-size: 35px;
-       line-height: 40px;
+       @include fs-titlepiece(1);
+       font-size: 32px;
+       line-height: 36px;
+
+       @include mq(mobileMedium) {
+         font-size: 36px;
+         line-height: 40px;
+       }
        }
     }
 
