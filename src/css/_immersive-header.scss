@@ -127,7 +127,7 @@
       }
 
       @include mq(leftCol) {
-        top: 100px;
+        top: 104px;
         width: 630px;
         left: -160px;
       }
@@ -154,7 +154,7 @@
       }
       @include mq(leftCol) {
         font-size: 100px;
-        line-height: 96px;
+        line-height: 92px;
         width: 640px;
       }
     }
@@ -165,11 +165,12 @@
         align-self: flex-end;
         height: auto;
         width: 240px;
+        margin-top: 2px;
         @include mq(mobileMedium) {
             width: 300px;
         }
           @include mq(tablet) {
-            // height: 40px;
+            margin-top: 6px;
           }
           @include mq(desktop) {
           }
