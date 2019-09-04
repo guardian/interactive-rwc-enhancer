@@ -64,6 +64,13 @@
        bottom: -7px;
        left: 0;
        padding-bottom: 20px;
+
+       @include mq(leftCol) {
+         height: 20px;
+       }
+       @include mq(wide) {
+         height: 24px;
+       }
      }
 
 
