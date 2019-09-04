@@ -164,3 +164,7 @@ and it will spit them all out. in the meantime you can do
 $ gulp --eng
 
  to look at any individual one of them
+
+ deploy individual team
+
+ $ gulp deploylive --jap
