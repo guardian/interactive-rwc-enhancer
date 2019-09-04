@@ -33,10 +33,25 @@
         @include fs-titlepiece(1);
         font-size: 30px;
         line-height: 32px;
-        padding-bottom: 20px;
+        // padding-bottom: 20px;
         @include mq(leftCol) {
+        display: block;
         word-spacing: 1000px;
         }
+        @include mq(wide) {
+        word-spacing: 0px;
+        }
+     }
+
+     .i-team__country {
+       @include mq(leftCol) {
+         position: absolute;
+       }
+     }
+
+     .i-teamnameSVG {
+       display: block;
+       padding-bottom: 20px;
      }
 
 
@@ -114,7 +129,7 @@ position: absolute;
     display: inline-block;
     margin-right: 20px;
     margin-bottom: 10px;
-   
+
 
     span {
 
@@ -260,18 +275,26 @@ position: absolute;
         display: block;
 
         &:nth-of-type(2) {
-            @include fs-titlepiece(1);
+            @include fs-headline(1);
+            font-weight: 700;
             font-size: 24px;
             line-height: 28px;
         }
     }
 
     &.i-player-name {
+
        display: block;
        margin-right: 0;
        span {
-       font-size: 35px;
-       line-height: 40px;
+       @include fs-titlepiece(1);
+       font-size: 32px;
+       line-height: 36px;
+
+       @include mq(mobileMedium) {
+         font-size: 36px;
+         line-height: 40px;
+       }
        }
     }
 
@@ -300,10 +323,10 @@ position: absolute;
     color: #121212 !important;
 
     .i-lineup-entry {
-       
+
         //margin-bottom: 0 !important;
     }
-   
+
 
 }
 
@@ -311,7 +334,7 @@ position: absolute;
 
     @include fs-textSans(4);
     font-weight: 800;
-   
+
     font-size: 15px;
     line-height: 17px;
     padding-bottom: 20px;
