@@ -68,6 +68,7 @@
 }
 
 .weighting--showcase {
+    position: relative;
     @include mq(desktop) {
         width: 860px;
     }

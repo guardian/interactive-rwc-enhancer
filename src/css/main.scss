@@ -148,6 +148,8 @@ position: absolute;
 
 .i-key-players-heading {
 
+    margin-bottom: 40px;
+
     &:after {
         content: "";
         position: absolute;
@@ -156,12 +158,21 @@ position: absolute;
         background-image: url('<%= path %>/assets/imgs/type/key-player.svg');
         left: 0;
         bottom: -10px;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+        @include mq(leftCol) {
+            width: 120px;
+        }
+        @include mq(wide) {
+            width: 165px;
+        }
     }
 
 }
 
 .i-lineup-heading {
-
+    margin-bottom: 40px;
     &:after {
         content: "";
         position: absolute;
@@ -170,6 +181,16 @@ position: absolute;
         background-image: url('<%= path %>/assets/imgs/type/lineup.svg');
         left: 0;
         bottom: -10px;
+
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+        @include mq(leftCol) {
+            width: 120px;
+        }
+        @include mq(wide) {
+            width: 165px;
+        }
     }
 
 }
@@ -316,6 +337,7 @@ position: absolute;
         display: inline-block;
         padding-right: 5px;
         text-align: left;
+        vertical-align: top;
     }
 
     .i-lineup-age, .i-lineup-caps {
