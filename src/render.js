@@ -92,6 +92,10 @@ const dataurls = [
 {
     team : "wal",
     data: "https://interactive.guim.co.uk/docsdata-test/1Y3zJuyAy22LWOWyYKy2dIp5KSEmqph4kPZIQWDxnOOs.json"
+},
+{
+    team : "ita",
+    data: "https://interactive.guim.co.uk/docsdata-test/18mkWYgYJZQyHn_xVaLCWqlLo3Ap2ju0ooBvIpYiUORs.json"
 }
 ]
 

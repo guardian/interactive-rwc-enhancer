@@ -19,3 +19,4 @@ gulp deploylive --ton
 gulp deploylive --uru
 gulp deploylive --usa
 gulp deploylive --wal
+gulp deploylive --ita
