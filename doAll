@@ -8,7 +8,7 @@ gulp deploylive --fij
 gulp deploylive --fra
 gulp deploylive --geo
 gulp deploylive --ire
-gulp deploylive --jap
+gulp deploylive --jpn
 gulp deploylive --nam
 gulp deploylive --nz
 gulp deploylive --rsa
