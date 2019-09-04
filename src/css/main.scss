@@ -223,7 +223,7 @@ position: absolute;
     &:after {
         content: "";
         position: absolute;
-        width: 165px;
+        width: 141px;
         height: 23px;
         background-image: url('<%= path %>/assets/imgs/type/lineup.svg');
         left: 0;
@@ -236,7 +236,7 @@ position: absolute;
             width: 120px;
         }
         @include mq(wide) {
-            width: 165px;
+            width: 141px;
         }
     }
 
