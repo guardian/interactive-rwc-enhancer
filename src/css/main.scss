@@ -160,6 +160,7 @@ position: absolute;
 
 .i-team-profile {
     white-space: pre-line;
+    margin-bottom: 36px;
 }
 
 .i-key-players-heading {
@@ -212,7 +213,7 @@ position: absolute;
 }
 
 .i-player-wrapper {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
     &:after {
         content: "";
         display: block;
@@ -226,6 +227,14 @@ position: absolute;
     height: 140px;
     position: relative;
     float: left;
+    margin-right: 10px;
+    margin-bottom: 6px;
+
+    @include mq(mobileLandscape) {
+      width: 150px;
+      height: 150px;
+      margin-right: 12px;
+    }
 
 
     .i-mugshot-inner{
@@ -257,8 +266,18 @@ position: absolute;
 }
 
 .i-playerinfo {
- float: right;
- width: calc(100% - 150px);
+ // float: right;
+ // width: calc(100% - 150px);
+ display: grid;
+ grid-column-gap: 10px;
+ grid-template-columns: 50% 50%;
+ width: calc(100% - 10px);
+ max-width: 620px;
+
+ @include mq(mobileLandscape) {
+   grid-template-columns: 25% 25% 25% 25%;
+   width: calc(100% - 20px);
+ }
 }
 
 .i-player-stat {
@@ -290,6 +309,7 @@ position: absolute;
        @include fs-titlepiece(1);
        font-size: 32px;
        line-height: 36px;
+       word-spacing: 1000px;
 
        @include mq(mobileMedium) {
          font-size: 36px;
@@ -298,16 +318,17 @@ position: absolute;
        }
     }
 
-    &.i-player-position {
-        // display: block;
-        // margin-right: 0;
-
-     }
-
 }
 
 .i-player-profile {
-    margin-left: -150px;
+    @include fs-headline(3);
+    font-size: 18px;
+    font-weight: 200;
+    grid-column: span 2;
+
+    @include mq(mobileLandscape) {
+      grid-column: span 4;
+    }
     @include mq(tablet) {
         margin-left: 0;
     }
