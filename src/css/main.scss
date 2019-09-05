@@ -462,3 +462,20 @@ position: absolute;
         display: none;
     }
 }
+
+.interactive-ad-banner {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+
+    .ad-slot--rendered {
+        @include mq(tablet) {
+          margin: 20px 0 40px 0;
+        }
+        @include mq(desktop) {
+          margin-left: 104px;
+        }
+    }
+
+
+}
