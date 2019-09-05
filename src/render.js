@@ -6,6 +6,9 @@ import immersiveHeaderHTML from "./src/templates/immersive-scaffolding/header.ht
 import rp from "request-promise"
 
 const clean = async(immersiveData) => {
+    const relatedContentLink = "https://www.theguardian.com/sport/2019/sep/03/rugby-world-cup-preparations-hit-bump-with-concerns-over-readiness-of-pitch".replace(/^(?:https:\/\/(www.)theguardian.com)/g, "")
+    const relatedContent = await rp({uri: `https://api.nextgen.guardianapps.co.uk/related/${relatedContentLink}.json?exclude-tag=tone/advertisement-features&exclude-tag=guardian-professional/guardian-professional`, json: true});
+    immersiveData.relatedContent = relatedContent.html;
     immersiveData.teamClass = getTeamClass(immersiveData.teamname);
     immersiveData.teamprofile = stringToPars( immersiveData.teamprofile );
     immersiveData.twitterLink = 'https://twitter.com/intent/tweet?text=' + encodeURI(immersiveData.header.shareText) + '&url=' + encodeURIComponent(immersiveData.header.url + '?CMP=share_btn_tw');
