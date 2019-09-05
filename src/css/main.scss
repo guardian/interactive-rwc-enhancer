@@ -463,10 +463,6 @@ position: absolute;
     }
 }
 
-.i-related-content a {
-    word-spacing: normal !important;
-}
-
 .interactive-ad-banner {
     display: flex;
     justify-content: center;
@@ -491,19 +487,24 @@ position: absolute;
         content: "";
         display: block;
         position: absolute;
-        border-top: 1px solid green;
-        top: -21px;
+        border-top: 1px solid $neutral-86;
+        top: -39px;
         width: 100vw;
         left: -10px;
+
+        @include mq(mobileMedium) {
+          top: -21px;
+        }
+
+        @include mq(tablet) {
+          top: 1px;
+          width: 100%;
+        }
+
+        @include mq(desktop) {
+          display: none;
+        }
     }
   }
 
-
-  .gv-header-image__one {
-    border-bottom: 1px solid $neutral-86;
-
-    @include mq(desktop) {
-      border-bottom: none;
-    }
-  }
 }
