@@ -5,9 +5,15 @@ import immersiveHTML from "./src/templates/immersive-scaffolding/main.html!text"
 import immersiveHeaderHTML from "./src/templates/immersive-scaffolding/header.html!text"
 import rp from "request-promise"
 
+let relatedContent = { html: "" };
+
 const clean = async(immersiveData) => {
-    const relatedContentLink = "https://www.theguardian.com/sport/2019/sep/03/rugby-world-cup-preparations-hit-bump-with-concerns-over-readiness-of-pitch".replace(/^(?:https:\/\/(www.)theguardian.com)/g, "")
-    const relatedContent = await rp({uri: `https://api.nextgen.guardianapps.co.uk/related/${relatedContentLink}.json?exclude-tag=tone/advertisement-features&exclude-tag=guardian-professional/guardian-professional`, json: true});
+    const relatedContentLink = "https://www.theguardian.com/sport/2019/sep/03/rugby-world-cup-preparations-hit-bump-with-concerns-over-readiness-of-pitch".replace(/^(?:https:\/\/(www.)theguardian.com)/g, "");
+    try {
+    relatedContent = await rp({uri: `https://api.nextgen.guardianapps.co.uk/related/${relatedContentLink}.json?exclude-tag=tone/advertisement-features&exclude-tag=guardian-professional/guardian-professional`, json: true});
+    } catch (error) {
+        console.error(error);
+    }
     immersiveData.relatedContent = relatedContent.html;
     immersiveData.teamClass = getTeamClass(immersiveData.teamname);
     immersiveData.teamprofile = stringToPars( immersiveData.teamprofile );
