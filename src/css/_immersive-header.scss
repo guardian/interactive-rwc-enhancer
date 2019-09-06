@@ -306,6 +306,13 @@
       margin-top: 12px;
       // margin-bottom:
     }
+    @include mq(leftCol) {
+      min-height:130px;
+    }
+
+    @include mq(wide) {
+      min-height:100px;
+    }
 
 }
 
