@@ -18,8 +18,6 @@ const clean = async(immersiveData) => {
     return immersiveData;
 }
 
-// let team = process.argv.find(a => a.includes("--")).toString().replace("--","")
-
 const dataurls = [
     {
     team : "aus",
@@ -119,9 +117,7 @@ const dataurls = [
 //     return output;
 // }
 
-export async function render(t) {
-    const team = t;
-    console.log(team)
+export async function render(team) {
     var teamurl = dataurls.find(d => d.team == team).data;
     const data = await clean(await rp({uri: teamurl, json: true}));
 

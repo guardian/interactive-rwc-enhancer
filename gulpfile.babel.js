@@ -24,13 +24,26 @@ import replace from 'gulp-replace'
 import webpack from 'webpack'
 import ws from 'webpack-stream'
 
-const team = process.argv.find(a => a.includes("--")).toString().replace("--","")
+let config ='';
+let team = '';
+let auto = true;
 
-const config = {
+if (process.argv.filter(a => a.includes('--')).length > 0) {
+    let teamparam = process.argv.find(a => a.includes("--")).toString().replace("--","")
+
+    team = teamparam.length > 0 ? teamparam : '';
+
+config = {
     "title": `Rugby World Cup team guide enhancer - ${team}`,
     "docData": "",
     "path": `2019/09/rwc-team-guide-${team}`
 }
+
+auto = false;
+
+}
+
+
 
 const debug = require('gulp-debug');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
@@ -43,9 +56,9 @@ const cdnUrl = 'https://interactive.guim.co.uk';
 const isDeploy = gutil.env._.indexOf('deploy') > -1 || gutil.env._.indexOf('deploylive') > -1 || gutil.env._.indexOf('deploypreview') > -1;
 
 const version = `v/${Date.now()}`;
-const s3Path = `atoms/${config.path}`;
-const s3VersionPath = `${s3Path}/${version}`;
-const path = isDeploy ? `${cdnUrl}/${s3VersionPath}` : '.';
+const s3Path = () => `atoms/${config.path}`;
+const s3VersionPath = () => `${s3Path}/${version}`;
+const path = () => isDeploy ? `${cdnUrl}/${s3VersionPath}` : '.';
 
 // hack to use .babelrc environments without env var, would be nice to
 // be able to pass "client" env through to babel
@@ -155,10 +168,25 @@ gulp.task('build:js.app', buildJS('app.js'));
 gulp.task('build:js', ['build:js.main', 'build:js.app']);
 
 gulp.task('build:html', cb => {
+
+    if (auto == true)
+{
+    team = teamlist[count];
+    
+    config = {
+        "title": `Rugby World Cup team guide enhancer - ${team}`,
+        "docData": "",
+        "path": `2019/09/rwc-team-guide-${team}`
+    }
+
+    count++;
+
+}
+
     try {
         let render = requireUncached('./src/render.js').render;
-
-        Promise.resolve(render()).then(html => {
+        console.log(team)
+        Promise.resolve(render(team)).then(html => {
             file('main.html', html, {
                     'src': true
                 })
@@ -264,19 +292,28 @@ gulp.task('default', ['local'], () => {
     });
 });
 
-gulp.task('deploylive', ['build'], cb => {
-    if (s3Path === "atoms/2016/05/blah") {
+let count = 0;
+let teamlist = ['aus','arg','can','eng','fij','fra','geo','ire','ita','jpn','nam','nz','rsa','rus','sam','sco','ton','uru','usa','wal'];
+
+gulp.task('deploylive', cb => {
+    const run = teamlist.map(t => 'realdeploylive');
+    runSequence(...run)
+})
+
+gulp.task('realdeploylive', ['build'], cb => {
+
+    if (s3Path() === "atoms/2016/05/blah") {
         console.error("ERROR: You need to change the deploy path from its default value")
         return;
     }
 
     gulp.src(`${buildDir}/**/*`)
-        .pipe(s3Upload('max-age=31536000', s3VersionPath))
+        .pipe(s3Upload('max-age=31536000', s3VersionPath()))
         .on('end', () => {
             gulp.src('config.json')
                 .pipe(file('preview', version))
                 .pipe(file('live', version))
-                .pipe(s3Upload('max-age=30', s3Path))
+                .pipe(s3Upload('max-age=30', s3Path()))
                 .on('end', cb);
         });
 });
