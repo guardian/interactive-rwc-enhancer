@@ -55,6 +55,12 @@ $teamcolors: (
         ;
     }
 
+    .i-team-profile {
+      a {
+        color: #{$value} !important;
+      }
+    }
+
     .i-team-fill-color  {
         fill: #{$value} !important;
     }
