@@ -57,8 +57,8 @@ const isDeploy = gutil.env._.indexOf('deploy') > -1 || gutil.env._.indexOf('depl
 
 const version = `v/${Date.now()}`;
 const s3Path = () => `atoms/${config.path}`;
-const s3VersionPath = () => `${s3Path}/${version}`;
-const path = () => isDeploy ? `${cdnUrl}/${s3VersionPath}` : '.';
+const s3VersionPath = () => `${s3Path()}/${version}`;
+const path = () => isDeploy ? `${cdnUrl}/${s3VersionPath()}` : '.';
 
 // hack to use .babelrc environments without env var, would be nice to
 // be able to pass "client" env through to babel
@@ -217,7 +217,7 @@ gulp.task('build', ['_build'], () => {
 });
 
 gulp.task('deploy', ['build'], cb => {
-    if (s3Path === "atoms/2016/05/blah") {
+    if (s3Path() === "atoms/2016/05/blah") {
         console.error("ERROR: You need to change the deploy path from its default value")
         return;
     }
@@ -235,7 +235,7 @@ gulp.task('deploy', ['build'], cb => {
                 gulp.src('config.json')
                     .pipe(file('preview', version))
                     .pipe(isLive ? file('live', version) : gutil.noop())
-                    .pipe(s3Upload('max-age=30', s3Path))
+                    .pipe(s3Upload('max-age=30', s3Path()))
                     .on('end', cb);
             });
     });
@@ -319,17 +319,17 @@ gulp.task('realdeploylive', ['build'], cb => {
 });
 
 gulp.task('deploypreview', ['build'], cb => {
-    if (s3Path === "atoms/2016/05/blah") {
+    if (s3Path() === "atoms/2016/05/blah") {
         console.error("ERROR: You need to change the deploy path from its default value")
         return;
     }
 
     gulp.src(`${buildDir}/**/*`)
-        .pipe(s3Upload('max-age=31536000', s3VersionPath))
+        .pipe(s3Upload('max-age=31536000', s3VersionPath()))
         .on('end', () => {
             gulp.src('config.json')
                 .pipe(file('preview', version))
-                .pipe(s3Upload('max-age=30', s3Path))
+                .pipe(s3Upload('max-age=30', s3Path()))
                 .on('end', cb);
         });
 });
