@@ -13,6 +13,24 @@ s.href = '<%= path %>/main.css';
 parentdoc.head.appendChild(s);
 
 
+// Update share buttons with window location
+
+const winLoc = window.location.href;
+const shareText = window.guardian.config.page.webTitle || "Guardian interactive";
+
+const twitterLink = 'https://twitter.com/intent/tweet?text=' + encodeURI(shareText) + '&url=' + encodeURIComponent(winLoc + '?CMP=share_btn_tw');
+const facebookLink = 'https://www.facebook.com/dialog/share?app_id=180444840287&href=' + encodeURIComponent(winLoc + '?CMP=share_btn_fb');
+const emailLink = 'mailto:?subject=' + encodeURIComponent(shareText) + '&body=' + encodeURIComponent(winLoc + '?CMP=share_btn_link');
+
+const twitterEl = document.querySelector('.od-share__button--twitter a');
+const facebookEl = document.querySelector('.od-share__button--facebook a');
+const emailEl = document.querySelector('.od-share__button--email a'); 
+
+twitterEl.setAttribute("href", twitterLink);
+facebookEl.setAttribute("href", facebookLink);
+emailEl.setAttribute("href", emailLink);
+
+
 
 
 
