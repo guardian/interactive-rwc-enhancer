@@ -253,12 +253,17 @@ position: absolute;
 }
 
 .i-playermugshot {
-    width: 140px;
-    height: 140px;
+    width: 100px;
+    height: 100px;
     position: relative;
     float: left;
     margin-right: 10px;
     margin-bottom: 6px;
+
+    @include mq(mobileMedium) {
+      width: 120px;
+      height: 120px;
+    }
 
     @include mq(mobileLandscape) {
       width: 150px;
