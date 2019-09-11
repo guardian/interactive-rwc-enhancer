@@ -514,3 +514,16 @@ position: absolute;
   }
 
 }
+
+
+.canada {
+    .i-player-wrapper:nth-of-type(3) {
+        .i-player-stat.i-player-name span {
+            word-spacing: normal !important;
+            //max-width: 200px;
+            width: 180px;
+            float: left;
+        }
+
+    }
+}
