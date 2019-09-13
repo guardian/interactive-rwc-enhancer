@@ -527,3 +527,46 @@ position: absolute;
 
     }
 }
+
+.south-africa {
+  .gv-header-wrapper .gv-headline {
+    font-size: 46px;
+    line-height: 46px;
+
+    @include mq(tablet) {
+      font-size: 80px;
+      line-height: 75px;
+      width: 600px;
+    }
+    @include mq(leftCol) {
+      font-size: 100px;
+      line-height: 92px;
+      width: 800px;
+    }
+  }
+
+  .gv-headline__container {
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        border-top: 1px solid $neutral-86;
+        top: 5px;
+        width: 100vw;
+        left: -10px;
+
+        @include mq(mobileMedium) {
+          top: -35px;
+        }
+
+        @include mq(tablet) {
+          top: -4px;
+          width: 100%;
+        }
+
+        @include mq(desktop) {
+          display: none;
+        }
+    }
+  }
+}
