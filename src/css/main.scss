@@ -570,3 +570,21 @@ position: absolute;
     }
   }
 }
+
+.new-zealand {
+  .gv-header-wrapper .gv-headline {
+    font-size: 46px;
+    line-height: 46px;
+
+    @include mq(tablet) {
+      font-size: 80px;
+      line-height: 75px;
+      width: 600px;
+    }
+    @include mq(leftCol) {
+      font-size: 100px;
+      line-height: 92px;
+      width: 800px;
+    }
+  }
+}
